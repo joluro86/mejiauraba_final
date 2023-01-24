@@ -99,7 +99,7 @@ def calculo_novedades_acta(request):
                 try:
                     pedi = Acta.objects.get(
                         Q(pedido=pedido) & Q(item_cont='B 09'))
-                    if int(pedi.cantidad) > 0:
+                    if int(pedi.cantidad) > 1:
                         crear_novedad(pedido, 'Cantidad debe ser igual a 1. B 09 = ' +
                                       str(pedido.cantidad))
                 except:
